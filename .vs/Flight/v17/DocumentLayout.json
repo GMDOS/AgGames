@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|flight.client\\flight.client.esproj|c:\\users\\yoiwa.desktop-lrnkkud\\source\\repos\\flight\\flight.client\\flight.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|flight.client\\flight.client.esproj|solutionrelative:flight.client\\flight.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "flight.client",
+              "DocumentMoniker": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\flight.client\\flight.client.esproj",
+              "RelativeDocumentMoniker": "flight.client\\flight.client.esproj",
+              "ToolTip": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\flight.client\\flight.client.esproj",
+              "RelativeToolTip": "flight.client\\flight.client.esproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-07-20T14:59:52.114Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 403,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

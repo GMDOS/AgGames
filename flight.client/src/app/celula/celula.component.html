@@ -1,0 +1,6 @@
+<div 
+    [style.background-color]="cell.color" 
+    [style.color]="cell.fontColor"
+    [class.clicked]="cell.state == 'correct' || cell.state == 'incorrect'"
+    ><span>{{cell.numero}}</span>
+</div>

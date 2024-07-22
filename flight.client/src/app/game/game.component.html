@@ -1,0 +1,29 @@
+<!-- <button (click)="AumentaIssoAi()"></button>
+<p>{{contador}}</p> -->
+
+<!-- <div></div> -->
+<div class="game-container">
+    <div class="game-stats-container">
+        <div class="record current-record">
+            <span >{{currentRecord.toString().padStart(3, '0')}}</span>
+        </div>
+        <div class="emoji">
+            <span class="emoji-distance">{{emojiDistance}}</span>
+            <span class="emoji-direction">{{emojiDirection}}</span>
+        </div>
+        <div class="record top-record">
+            <span >{{topRecord.toString().padStart(3, '0')}}</span>
+        </div>
+    </div>
+    <div class="game-content-container">
+        <div *ngFor="let row of celulas">
+            <div class="cells-container">
+                <div *ngFor="let celula of row">
+                    <app-celula (click)="checkIfCorrect(celula)" [cell]="celula"></app-celula>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-placar></app-placar>
+<!-- <span>{{mensagem}}</span> -->

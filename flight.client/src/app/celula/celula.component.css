@@ -1,0 +1,21 @@
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: #BDBDBD;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    box-shadow: inset 4px 4px #fff, inset -4px -4px grey, inset 2px 2px #dfdfdf;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: large;
+    cursor: pointer;
+}
+.clicked{
+    cursor: default;
+    box-shadow: none;
+}
