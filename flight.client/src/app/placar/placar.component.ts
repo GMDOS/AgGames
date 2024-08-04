@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {placarItem} from "../placar-item/placar-item.component";
 
@@ -6,7 +7,25 @@ import {placarItem} from "../placar-item/placar-item.component";
   templateUrl: './placar.component.html',
   styleUrl: './placar.component.css'
 })
+
+
 export class PlacarComponent {
+    constructor(private http: HttpClient) {}
+    public placarItens: PlacarItem[] = [];
+
+    ngOnInit(){
+
+
+    }
+
+    public atualizarPlacar(novoPlacarItem:PlacarItem) {
+
+        this.placarItens.push(novoPlacarItem);
+            return;
+        this.http.post<PlacarItem>('/api/atualizarPlacar', novoPlacarItem).subscribe(placarItem => {
+            console.log('Updated config:', placarItem);
+          });
+    }
 
   placarItens: placarItem[] = [
     {
@@ -22,3 +41,10 @@ export class PlacarComponent {
   ] 
 
 }
+
+
+export interface PlacarItem {
+    posicao: number;
+    pontuacao: number;
+    nome: string;
+  }

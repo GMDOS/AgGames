@@ -8,7 +8,7 @@
         <div class="record current-record">
             <span >{{currentRecord.toString().padStart(3, '0')}}</span>
         </div>
-        <div class="emoji">
+        <div (click)="resetGame()" class="emoji">
             <span class="emoji-distance">{{emojiDistance}}</span>
             <span class="emoji-direction">{{emojiDirection}}</span>
         </div>
