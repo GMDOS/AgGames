@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\Flight.Server\\..\\flight.client",
+"WorkingDirectory": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\Documents\\git\\AgGames\\Flight.Server\\..\\flight.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

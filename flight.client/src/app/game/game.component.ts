@@ -18,6 +18,7 @@ export class GameComponent {
   public emojiDirection = '';
   public currentRecord = 0;
   public topRecord = 0;
+  public nome = "";
   
 
   @ViewChildren(CelulaComponent) celulaComponents!: QueryList<CelulaComponent>;
@@ -44,6 +45,7 @@ export class GameComponent {
   }
 
   checkIfCorrect(atual: celula) {
+    console.log(this.nome);
     this.currentRecord++;
     if (atual.numero == this.numeroCorreto) {
       atual.state = 'correct';

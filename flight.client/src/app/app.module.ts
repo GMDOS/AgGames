@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { GameComponent } from './game/game.component';
 import { CelulaComponent } from './celula/celula.component';
 import { PlacarComponent } from './placar/placar.component';
+import { PlacarItemComponent } from './placar-item/placar-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PlacarComponent } from './placar/placar.component';
     NavMenuComponent,
     GameComponent,
     CelulaComponent,
-    PlacarComponent
+    PlacarComponent,
+    PlacarItemComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

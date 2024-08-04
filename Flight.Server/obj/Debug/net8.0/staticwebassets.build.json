@@ -1,20 +1,20 @@
 {
   "Version": 1,
-  "Hash": "x7B7ri4S5cl3FcnVj2esz3zXrXY1SfMf6OVU7UdGtgc=",
+  "Hash": "GX07YOYzp0/5T9aAZ3mnxoFZVe4rgPAHZRMIp3hVDNc=",
   "Source": "Flight.Server",
   "BasePath": "_content/Flight.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\flight.client\\flight.client.esproj",
+      "Identity": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\Documents\\git\\AgGames\\flight.client\\flight.client.esproj",
       "Version": 2,
       "Source": "flight.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
