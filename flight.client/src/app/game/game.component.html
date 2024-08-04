@@ -2,12 +2,14 @@
 <p>{{contador}}</p> -->
 
 <!-- <div></div> -->
+ <input id="nome">
+ <app-placar></app-placar>
 <div class="game-container">
     <div class="game-stats-container">
         <div class="record current-record">
             <span >{{currentRecord.toString().padStart(3, '0')}}</span>
         </div>
-        <div class="emoji">
+        <div (click)="resetGame()" class="emoji">
             <span class="emoji-distance">{{emojiDistance}}</span>
             <span class="emoji-direction">{{emojiDirection}}</span>
         </div>

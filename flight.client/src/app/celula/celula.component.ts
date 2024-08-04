@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './celula.component.css'
 })
 export class CelulaComponent {
-  @Input() cell!: celula;
+  @Input() cell!: Celula;
   ngOnInit() {
     this.updateCell();
   }
@@ -30,7 +30,7 @@ export class CelulaComponent {
     }
   }
 }
-export interface celula {
+export interface Celula {
   numero: number;
   state: string;
   color: string;

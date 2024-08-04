@@ -2,8 +2,8 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
-"LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\Flight.Server\\..\\flight.client",
+"LaunchCommand": "ng serve",
+"WorkingDirectory": "/workspaces/AgGames/Flight.Server/../flight.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

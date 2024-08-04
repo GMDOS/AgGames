@@ -1,16 +1,16 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
-import { CelulaComponent, celula } from '../celula/celula.component';
+import { CelulaComponent, Celula} from '../celula/celula.component';
+import { PlacarComponent, PlacarItem} from '../placar/placar.component';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrl: './game.component.css'
+  styleUrl: './game.component.css',
 })
-
 export class GameComponent {
   public width = 10;
   public height = 10;
-  public celulas: celula[][] = [];
+  public celulas: Celula[][] = [];
   public numeroCorreto: number = 0;
   public binario = true;
   public mensagem = '';
@@ -18,15 +18,21 @@ export class GameComponent {
   public emojiDirection = '';
   public currentRecord = 0;
   public topRecord = 0;
-  
+
+
 
   @ViewChildren(CelulaComponent) celulaComponents!: QueryList<CelulaComponent>;
+
   ngOnInit() {
-    this.topRecord = parseInt(localStorage.getItem('currentRecord') ?? "0");
+    for (let i = 0; i < 10; i++) {
+        let placarItem : PlacarItem = {posicao: i, pontuacao: i + 7, nome: "João" + i} 
+        // PlacarComponent.atualizarPlacar(placarItem)
+    }
+    this.topRecord = parseInt(localStorage.getItem('currentRecord') ?? '0');
 
     let numero = 1;
     for (let i = 0; i < this.height; i++) {
-      const row: celula[] = [];
+      const row: Celula[] = [];
       for (let j = 0; j < this.width; j++) {
         let rand = Math.floor(Math.random() * 3);
         let state = '';
@@ -35,7 +41,7 @@ export class GameComponent {
           state: state,
           position: { x: j, y: i },
           color: '',
-          fontColor: ''
+          fontColor: '',
         });
       }
       this.celulas.push(row);
@@ -43,23 +49,40 @@ export class GameComponent {
     this.numeroCorreto = Math.floor(Math.random() * (this.height * this.width));
   }
 
-  checkIfCorrect(atual: celula) {
+  resetGame() {
+    // this.ngOnInit();
+    // this.celulas.forEach((row) => {
+    //   row.forEach((celula) => {
+    //     celula.state = '';
+    //   });
+    // });
+    // this.celulaComponents.forEach((celulaComponent) => {
+    //   if (celulaComponent) {
+    //     celulaComponent.updateCell();
+    //   }
+    // });
+  }
+
+  checkIfCorrect(atual: Celula) {
+    if (atual.state != '') {
+      return;
+    }
     this.currentRecord++;
     if (atual.numero == this.numeroCorreto) {
       atual.state = 'correct';
       this.mensagem = 'Acertou';
       this.emojiDistance = '😎';
       this.emojiDirection = '';
-      if(this.currentRecord < this.topRecord) {
+      if (this.currentRecord < this.topRecord || this.topRecord == 0) {
+          this.topRecord = this.currentRecord;
+
         localStorage.setItem('currentRecord', this.currentRecord.toString());
-        this.topRecord = this.currentRecord;
       }
     } else {
       atual.state = 'incorrect';
       this.emojiDistance = '🥴';
       this.mensagem = 'Errou';
     }
-
 
     if (this.binario) {
       if (atual.numero < this.numeroCorreto) {
@@ -71,11 +94,16 @@ export class GameComponent {
       }
     }
 
-    if (this.numeroCorreto - atual.numero == 1 || this.numeroCorreto - atual.numero == -1) {
+    if (
+      this.numeroCorreto - atual.numero == 1 ||
+      this.numeroCorreto - atual.numero == -1
+    ) {
       this.emojiDirection = '🤏';
     }
 
-    const celulaComponent = this.celulaComponents.find(c => c.cell.numero === atual.numero);
+    const celulaComponent = this.celulaComponents.find(
+      (c) => c.cell.numero === atual.numero
+    );
     if (celulaComponent) {
       celulaComponent.updateCell();
     }
