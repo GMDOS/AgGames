@@ -2,18 +2,18 @@
 <p>{{contador}}</p> -->
 
 <!-- <div></div> -->
- <input id="nome" value="{{nome}}"/>
+<input id="nome" (change)='updateNome()' [(ngModel)]="nome">
 <div class="game-container">
     <div class="game-stats-container">
         <div class="record current-record">
-            <span >{{currentRecord.toString().padStart(3, '0')}}</span>
+            <span>{{currentRecord.toString().padStart(3, '0')}}</span>
         </div>
         <div (click)="resetGame()" class="emoji">
             <span class="emoji-distance">{{emojiDistance}}</span>
             <span class="emoji-direction">{{emojiDirection}}</span>
         </div>
         <div class="record top-record">
-            <span >{{topRecord.toString().padStart(3, '0')}}</span>
+            <span>{{topRecord.toString().padStart(3, '0')}}</span>
         </div>
     </div>
     <div class="game-content-container">
@@ -26,5 +26,5 @@
         </div>
     </div>
 </div>
-<app-placar></app-placar>
+<app-placar [placarItens]="placarItens"></app-placar>
 <!-- <span>{{mensagem}}</span> -->

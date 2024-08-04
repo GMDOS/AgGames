@@ -27,8 +27,8 @@ app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
 
-app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
-    string.Join("\n", endpointSources.SelectMany(source => source.Endpoints)));
+// app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
+//     string.Join("\n", endpointSources.SelectMany(source => source.Endpoints)));
 
 
 app.Run();

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import {placarItem} from "../placar-item/placar-item.component";
+import { Component, Input } from '@angular/core';
+import { placarItem } from "../placar-item/placar-item.component";
 
 @Component({
   selector: 'app-placar',
@@ -10,41 +10,34 @@ import {placarItem} from "../placar-item/placar-item.component";
 
 
 export class PlacarComponent {
-    constructor(private http: HttpClient) {}
-    public placarItens: PlacarItem[] = [];
+  // constructor(private http: HttpClient) { }
+  @Input() placarItens!: placarItem[];
 
-    ngOnInit(){
+  // public placarItens: placarItem[] = [
+  //   {
+  //     posicao: 1,
+  //     nome: 'Jogador 1',
+  //     pontuacao: 0
+  //   },
+  //   {
+  //     posicao: 2,
+  //     nome: 'Jogador 2',
+  //     pontuacao: 0
+  //   }
+  // ]
 
-
-    }
-
-    public atualizarPlacar(novoPlacarItem:PlacarItem) {
-
-        this.placarItens.push(novoPlacarItem);
-            return;
-        this.http.post<PlacarItem>('/api/atualizarPlacar', novoPlacarItem).subscribe(placarItem => {
-            console.log('Updated config:', placarItem);
-          });
-    }
-
-  placarItens: placarItem[] = [
-    {
-      numero: 1,
-      nome: 'Jogador 1',
-      pontuacao: 0  
-    },
-    {
-      numero: 2,
-      nome: 'Jogador 2',
-      pontuacao: 0
-    }
-  ] 
-
-}
+  ngOnInit() {
 
 
-export interface PlacarItem {
-    posicao: number;
-    pontuacao: number;
-    nome: string;
   }
+
+  public atualizarPlacar(novoPlacarItem: placarItem) {
+
+    // this.placarItens.push(novoPlacarItem);
+    //     return;
+    // this.http.post<PlacarItem>('/api/atualizarPlacar', novoPlacarItem).subscribe(placarItem => {
+    //     console.log('Updated config:', placarItem);
+    //   });
+
+  }
+}

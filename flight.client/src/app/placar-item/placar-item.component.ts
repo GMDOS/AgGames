@@ -14,7 +14,7 @@ export class PlacarItemComponent {
 }
 
 export interface placarItem {
-  numero: number;
+  posicao: number;
   nome: string;
   pontuacao: number;
 }

@@ -1,6 +1,8 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
-import { CelulaComponent, Celula} from '../celula/celula.component';
-import { PlacarComponent, PlacarItem} from '../placar/placar.component';
+import { Component, NgModule, QueryList, ViewChildren } from '@angular/core';
+import { CelulaComponent, Celula } from '../celula/celula.component';
+import { placarItem } from "../placar-item/placar-item.component";
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-game',
@@ -8,6 +10,7 @@ import { PlacarComponent, PlacarItem} from '../placar/placar.component';
   styleUrl: './game.component.css',
 })
 export class GameComponent {
+  constructor(private http: HttpClient) { }
   public width = 10;
   public height = 10;
   public celulas: Celula[][] = [];
@@ -19,14 +22,27 @@ export class GameComponent {
   public currentRecord = 0;
   public topRecord = 0;
   public nome = "";
-  
+  public placarItens: placarItem[] = [];
 
   @ViewChildren(CelulaComponent) celulaComponents!: QueryList<CelulaComponent>;
 
+  updateNome() {
+    localStorage.setItem("nome", this.nome);
+  }
+
+  resetGame() {
+    this.celulas = [];
+    this.ngOnInit();
+  }
+
   ngOnInit() {
+    this.nome = localStorage.getItem("nome") ?? "";
+    this.currentRecord = 0;
+    this.emojiDistance = '🙂';
+    this.emojiDirection = '';
     for (let i = 0; i < 10; i++) {
-        let placarItem : PlacarItem = {posicao: i, pontuacao: i + 7, nome: "João" + i} 
-        // PlacarComponent.atualizarPlacar(placarItem)
+      let placarItem: placarItem = { posicao: i, pontuacao: i + 7, nome: "João" + i }
+      this.placarItens.push(placarItem);
     }
     this.topRecord = parseInt(localStorage.getItem('currentRecord') ?? '0');
 
@@ -49,47 +65,47 @@ export class GameComponent {
     this.numeroCorreto = Math.floor(Math.random() * (this.height * this.width));
   }
 
-  checkIfCorrect(atual: celula) {
-    console.log(this.nome);
-    this.currentRecord++;
-    if (atual.numero == this.numeroCorreto) {
-      atual.state = 'correct';
-      this.mensagem = 'Acertou';
-      this.emojiDistance = '😎';
-      this.emojiDirection = '';
-      if (this.currentRecord < this.topRecord || this.topRecord == 0) {
-          this.topRecord = this.currentRecord;
+  checkIfCorrect(atual: Celula) {
+    if (atual.state != "") return;
 
-        localStorage.setItem('currentRecord', this.currentRecord.toString());
+    let url = `/api/Game/CheckIfCorrect?numero=${atual.numero}&token=${localStorage.getItem("token") ?? ""}`;
+    this.http.get(url, { responseType: 'text' }).subscribe(
+      {
+        next: (res) => {
+          let result: CheckIfCorrectResult = JSON.parse(res);
+          localStorage.setItem("token", result.token);
+          atual.state = result.state;
+          this.mensagem = result.mensagem;
+          this.emojiDistance = result.emojiDistance;
+          this.emojiDirection = result.emojiDirection;
+          this.currentRecord = result.currentRecord;
+          const celulaComponent = this.celulaComponents.find(
+            (c) => c.cell.numero === atual.numero
+          );
+          if (celulaComponent) {
+            celulaComponent.updateCell();
+          }
+          if (result.state == "correct") {
+            if (this.currentRecord < this.topRecord || this.topRecord == 0) {
+              this.topRecord = this.currentRecord;
+              localStorage.setItem('currentRecord', this.currentRecord.toString());
+            }
+          }
+        },
+        error: (err) => {
+          console.log('Error:', err);
+        }
       }
-    } else {
-      atual.state = 'incorrect';
-      this.emojiDistance = '🥴';
-      this.mensagem = 'Errou';
-    }
-
-    if (this.binario) {
-      if (atual.numero < this.numeroCorreto) {
-        this.emojiDirection = '👆';
-        this.mensagem = 'Maior';
-      } else if (atual.numero > this.numeroCorreto) {
-        this.emojiDirection = '👇';
-        this.mensagem = 'Menor';
-      }
-    }
-
-    if (
-      this.numeroCorreto - atual.numero == 1 ||
-      this.numeroCorreto - atual.numero == -1
-    ) {
-      this.emojiDirection = '🤏';
-    }
-
-    const celulaComponent = this.celulaComponents.find(
-      (c) => c.cell.numero === atual.numero
     );
-    if (celulaComponent) {
-      celulaComponent.updateCell();
-    }
   }
+}
+export interface CheckIfCorrectResult {
+  token: string;
+  state: string;
+  mensagem: string;
+  emojiDistance: string;
+  emojiDirection: string;
+  currentRecord: number;
+  // topRecord: number;
+  nome: string;
 }
