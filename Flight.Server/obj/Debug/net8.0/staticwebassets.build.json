@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "GX07YOYzp0/5T9aAZ3mnxoFZVe4rgPAHZRMIp3hVDNc=",
+  "Hash": "e0E7QLRIO7t/T9/TrtdO5EKkfQDGJrxh2kJ4nfQsKhQ=",
   "Source": "Flight.Server",
   "BasePath": "_content/Flight.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\Documents\\git\\AgGames\\flight.client\\flight.client.esproj",
+      "Identity": "/workspaces/AgGames/flight.client/flight.client.esproj",
       "Version": 2,
       "Source": "flight.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

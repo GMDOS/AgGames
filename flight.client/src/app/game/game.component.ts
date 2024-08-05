@@ -67,9 +67,13 @@ export class GameComponent {
 
   checkIfCorrect(atual: Celula) {
     if (atual.state != "") return;
+    let req: CheckIfCorrectRequest = {numero: atual.numero,
+                                      token:localStorage.getItem("token") ?? "",
+                                      nome:this.nome
+                                    }
 
-    let url = `/api/Game/CheckIfCorrect?numero=${atual.numero}&token=${localStorage.getItem("token") ?? ""}`;
-    this.http.get(url, { responseType: 'text' }).subscribe(
+    let url = "/api/Game/CheckIfCorrect";
+    this.http.post(url, req,{ responseType: 'text' }).subscribe(
       {
         next: (res) => {
           let result: CheckIfCorrectResult = JSON.parse(res);
@@ -99,6 +103,12 @@ export class GameComponent {
     );
   }
 }
+export interface CheckIfCorrectRequest {
+    token: string;
+    numero: number;
+    nome: string;
+  }
+
 export interface CheckIfCorrectResult {
   token: string;
   state: string;

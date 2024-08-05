@@ -1,2 +1,3 @@
-C:\Users\yoiwa.DESKTOP-LRNKKUD\source\repos\Flight\flight.client\obj\Debug\flight.client.esproj.CoreCompileInputs.cache
-C:\Users\yoiwa.DESKTOP-LRNKKUD\Documents\git\AgGames\flight.client\obj\Debug\flight.client.esproj.CoreCompileInputs.cache
+C:/Users/yoiwa.DESKTOP-LRNKKUD/source/repos/Flight/flight.client/obj/Debug/flight.client.esproj.CoreCompileInputs.cache
+C:/Users/yoiwa.DESKTOP-LRNKKUD/Documents/git/AgGames/flight.client/obj/Debug/flight.client.esproj.CoreCompileInputs.cache
+/workspaces/AgGames/flight.client/obj/Debug/flight.client.esproj.CoreCompileInputs.cache

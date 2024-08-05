@@ -15,55 +15,55 @@ namespace Flight.Server.Controllers
             _logger = logger;
         }
 
-        [HttpGet("CheckIfCorrect")]
-        public CheckIfCorrectResult CheckIfCorrect(int numero, string token = "")
+        [HttpPost("CheckIfCorrect")]
+        public CheckIfCorrectResult CheckIfCorrect(CheckIfCorrectRequest req)
         {
             CheckIfCorrectResult result = new();
             bool binario = true; //TODO: DIFERENTE MODO DE JOGO
             //cria um novo se não existir
-            if (!numerosCorretos.ContainsKey(token))
+            if (!numerosCorretos.ContainsKey(req.Token))
             {
-                token = Guid.NewGuid().ToString();
-                numerosCorretos.Add(token, new Random().Next(1, 101));
-                stats.Add(token, result);
+                req.Token = Guid.NewGuid().ToString();
+                numerosCorretos.Add(req.Token, new Random().Next(1, 101));
+                stats.Add(req.Token, result);
             }
-            result = stats[token];
-            result.token = token;
-            result.currentRecord++;
-            int numeroCorreto = numerosCorretos[token];
-            if (numero == numeroCorreto)
+            result = stats[req.Token];
+            result.Token = req.Token;
+            result.CurrentRecord++;
+            int numeroCorreto = numerosCorretos[req.Token];
+            if (req.Numero == numeroCorreto)
             {
-                result.state = "correct";
-                result.mensagem = "Acertou";
-                result.emojiDistance = "😎";
-                result.emojiDirection = "";
+                result.State = "correct";
+                result.Mensagem = "Acertou";
+                result.EmojiDistance = "😎";
+                result.EmojiDirection = "";
                 //TODO: SAVE RESULT IN THE DB
 
                 // para se certificar que só da para vencer uma vez por token
-                numerosCorretos.Remove(token);
-                stats.Remove(token);
+                numerosCorretos.Remove(req.Token);
+                stats.Remove(req.Token);
             }
             else
             {
-                result.state = "incorrect";
-                result.emojiDistance = "🥴";
-                result.mensagem = "Errou";
+                result.State = "incorrect";
+                result.EmojiDistance = "🥴";
+                result.Mensagem = "Errou";
             }
             if (binario)
             {
-                if (numero < numeroCorreto)
+                if (req.Numero < numeroCorreto)
                 {
-                    result.emojiDirection = "👆";
-                    result.mensagem = "Maior";
+                    result.EmojiDirection = "👆";
+                    result.Mensagem = "Maior";
                 }
-                else if (numero > numeroCorreto)
+                else if (req.Numero > numeroCorreto)
                 {
-                    result.emojiDirection = "👇";
-                    result.mensagem = "Menor";
+                    result.EmojiDirection = "👇";
+                    result.Mensagem = "Menor";
                 }
-                if (numeroCorreto - numero == 1 || numeroCorreto - numero == -1)
+                if (numeroCorreto - req.Numero == 1 || numeroCorreto - req.Numero == -1)
                 {
-                    result.emojiDirection = "🤏";
+                    result.EmojiDirection = "🤏";
                 }
             }
             return result;
@@ -71,13 +71,19 @@ namespace Flight.Server.Controllers
     }
     public class CheckIfCorrectResult
     {
-        public string token { get; set; } = "";
-        public string state { get; set; } = "";
-        public string mensagem { get; set; } = "";
-        public string emojiDistance { get; set; } = "";
-        public string emojiDirection { get; set; } = "";
-        public int currentRecord { get; set; }
+        public string Token { get; set; } = "";
+        public string State { get; set; } = "";
+        public string Mensagem { get; set; } = "";
+        public string EmojiDistance { get; set; } = "";
+        public string EmojiDirection { get; set; } = "";
+        public int CurrentRecord { get; set; }
         // public int topRecord { get; set; }
-        public string nome { get; set; } = "";
+        public string Nome { get; set; } = "";
+    }
+    public class CheckIfCorrectRequest
+    {
+        public string Token { get; set; } = "";
+        public int Numero { get; set; }
+        public string Nome { get; set; } = "";
     }
 }
