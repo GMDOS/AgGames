@@ -105,3 +105,4 @@ C:/Users/yoiwa.DESKTOP-LRNKKUD/Documents/git/AgGames/Flight.Server/obj/Debug/net
 /workspaces/AgGames/Flight.Server/obj/Debug/net8.0/Flight.Server.pdb
 /workspaces/AgGames/Flight.Server/obj/Debug/net8.0/Flight.Server.genruntimeconfig.cache
 /workspaces/AgGames/Flight.Server/obj/Debug/net8.0/ref/Flight.Server.dll
+/workspaces/AgGames/Flight.Server/bin/Debug/net8.0/Npgsql.dll
