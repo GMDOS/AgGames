@@ -22,6 +22,11 @@ export class CelulaComponent {
         // this.cell.fontColor = "white";
         this.cell.fontColor = "red";
         break;
+        case "unsure":
+            // this.cell.color = "green";
+            // this.cell.fontColor = "white";
+            this.cell.fontColor = "black";
+            break;
       default:
         // this.cell.color = "white";
         // this.cell.fontColor = "black";

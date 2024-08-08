@@ -1,9 +1,8 @@
 <!-- <button (click)="AumentaIssoAi()"></button>
 <p>{{contador}}</p> -->
-
-<!-- <div></div> -->
-<input id="nome" (change)='updateNome()' [(ngModel)]="nome">
+<div class="window-container">
 <div class="game-container">
+    <input id="nome" placeholder="Digite aqui seu nome" (change)='updateNome()' [(ngModel)]="nome">
     <div class="game-stats-container">
         <div class="record current-record">
             <span>{{currentRecord.toString().padStart(3, '0')}}</span>
@@ -26,5 +25,6 @@
         </div>
     </div>
 </div>
-<app-placar [placarItens]="placarItens"></app-placar>
+<app-placar [placarItens]="placarItens" class="placar"></app-placar>
+</div>
 <!-- <span>{{mensagem}}</span> -->

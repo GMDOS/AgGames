@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/seven-segment');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
 
 .cells-container {
     display: flex;
@@ -6,14 +7,72 @@
     width: fit-content;
 }
 
-
-.game-container {
+.window-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: fit-content;
     width: fit-content;
     background-color: #BDBDBD;
     padding: 18px;
     box-shadow: inset 6px 6px #fff, inset -6px -6px grey, inset 2px 2px #dfdfdf;
+}
+
+.placar{
+    color: #FF0000;
+    background-color: black; 
+    font-family: 'Seven Segment', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-left: 12px;
+    max-height: 36rem;
+    overflow-y:scroll;
+    /* max-width: 10rem; */
+    width: 10rem;
+    /* margin-bottom: 12px; */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #df0505; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+#nome{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* width: 2rem; */
+    height: 1.8rem;
+    color: #FF0000;
+    background-color: black; 
+    font-family: 'Seven Segment', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    /* box-shadow: inset 4px 4px grey, inset -4px -4px #fff, inset 4px 4px grey; */
+    border: 0px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .game-stats-container {                                               
@@ -37,6 +96,14 @@
     box-shadow: inset 6px 6px grey, inset -6px -6px #fff, inset 6px 6px grey;
 }
 
+.emoji-distance, .emoji-direction{
+    font-family: "Noto Emoji", sans-serif;
+    font-optical-sizing: auto;
+  font-weight: 700;
+  color: black;
+
+}
+
 .emoji{
     display: flex;
     align-items: center;
@@ -49,8 +116,9 @@
     box-shadow: inset 4px 4px #fff, inset -4px -4px grey, inset 2px 2px #dfdfdf;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     cursor: pointer;
+    padding-left: 2px;
 }
 
 .record{

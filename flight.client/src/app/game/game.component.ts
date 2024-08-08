@@ -76,6 +76,7 @@ export class GameComponent {
 
   checkIfCorrect(atual: Celula) {
     if (atual.state != '') return;
+    atual.state = 'unsure';
     let req: CheckIfCorrectRequest = {
       numero: atual.numero,
       token: localStorage.getItem('token') ?? '',

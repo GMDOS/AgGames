@@ -28,7 +28,7 @@ namespace Flight.Server.Controllers
                                     + "Password=Careca12;";
             using NpgsqlConnection connection = new NpgsqlConnection(connectionString);
             connection.Open();
-            string command = "SELECT NOME, PONTUACAO FROM placar order by pontuacao asc, id desc LIMIT 10;";
+            string command = "SELECT NOME, PONTUACAO FROM placar order by pontuacao asc, id desc LIMIT 10000;";
             using NpgsqlCommand cmd = new NpgsqlCommand(command, connection);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
 
