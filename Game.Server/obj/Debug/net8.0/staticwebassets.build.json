@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "78ENiavJ9UgHE9urs/yCjYwHhqlD2AFqSHdNzeyi7rM=",
+  "Source": "Game.Server",
+  "BasePath": "_content/Game.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/workspaces/AgGames/game.client/game.client.esproj",
+      "Version": 2,
+      "Source": "game.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

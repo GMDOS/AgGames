@@ -1,0 +1,1 @@
+/workspaces/AgGames/game.client/obj/Debug/game.client.esproj.CoreCompileInputs.cache

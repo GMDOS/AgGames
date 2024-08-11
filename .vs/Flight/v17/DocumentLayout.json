@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\",
+  "WorkspaceRootPath": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|flight.client\\flight.client.esproj|c:\\users\\yoiwa.desktop-lrnkkud\\source\\repos\\flight\\flight.client\\flight.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|flight.client\\flight.client.esproj|solutionrelative:flight.client\\flight.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|game.client\\game.client.esproj|c:\\users\\yoiwa.desktop-lrnkkud\\source\\repos\\game\\game.client\\game.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{816662AE-9392-483D-8AAB-9126DA439FEF}|game.client\\game.client.esproj|solutionrelative:game.client\\game.client.esproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,11 +27,11 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "flight.client",
-              "DocumentMoniker": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\flight.client\\flight.client.esproj",
-              "RelativeDocumentMoniker": "flight.client\\flight.client.esproj",
-              "ToolTip": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Flight\\flight.client\\flight.client.esproj",
-              "RelativeToolTip": "flight.client\\flight.client.esproj",
+              "Title": "game.client",
+              "DocumentMoniker": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Game\\game.client\\game.client.esproj",
+              "RelativeDocumentMoniker": "game.client\\game.client.esproj",
+              "ToolTip": "C:\\Users\\yoiwa.DESKTOP-LRNKKUD\\source\\repos\\Game\\game.client\\game.client.esproj",
+              "RelativeToolTip": "game.client\\game.client.esproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-07-20T14:59:52.114Z",
               "EditorCaption": ""

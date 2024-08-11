@@ -1,0 +1,3 @@
+C:/Users/yoiwa.DESKTOP-LRNKKUD/source/repos/Game/game.client/obj/Debug/game.client.esproj.CoreCompileInputs.cache
+C:/Users/yoiwa.DESKTOP-LRNKKUD/Documents/git/AgGames/game.client/obj/Debug/game.client.esproj.CoreCompileInputs.cache
+/workspaces/AgGames/game.client/obj/Debug/game.client.esproj.CoreCompileInputs.cache
